@@ -26,4 +26,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v5
       - run: npm install
-      - run: node
+      - run: node test/tasks.test.js
