@@ -1,4 +1,4 @@
-const { getTasks, reset, addTask } = require('../lib/tasks');
+const { getTasks, reset, addTask, toggleTask } = require('../lib/tasks');
 
 beforeEach(() => {
   reset();
@@ -20,6 +20,12 @@ test('addTask increments task IDs', () => {
     { id: 1, name: 'First task', done: false },
     { id: 2, name: 'Second task', done: false }
   ]);
+});
+
+test('toggleTask() toggles a task', () => {
+  addTask('Test task');
+  toggleTask(1);
+  expect(getTasks()).toEqual([{ id: 1, name: 'Test task', done: true }]);
 });
 
 test('reset clears the task list', () => {
