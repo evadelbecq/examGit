@@ -1,4 +1,4 @@
-const { getTasks, reset, createTask } = require('../lib/tasks');
+const { getTasks, reset, addTask } = require('../lib/tasks');
 
 beforeEach(() => {
   reset();
@@ -8,14 +8,14 @@ test('initial task list is empty', () => {
   expect(getTasks()).toEqual([]);
 });
 
-test('createTask adds a new task', () => {
-  createTask('Test task');
+test('addTask adds a new task', () => {
+  addTask('Test task');
   expect(getTasks()).toEqual([{ id: 1, name: 'Test task', done: false }]);
 });
 
-test('createTask increments task IDs', () => {
-  createTask('First task');
-  createTask('Second task');
+test('addTask increments task IDs', () => {
+  addTask('First task');
+  addTask('Second task');
   expect(getTasks()).toEqual([
     { id: 1, name: 'First task', done: false },
     { id: 2, name: 'Second task', done: false }
@@ -23,7 +23,7 @@ test('createTask increments task IDs', () => {
 });
 
 test('reset clears the task list', () => {
-  createTask('Task to be cleared');
+  addTask('Task to be cleared');
   reset();
   expect(getTasks()).toEqual([]);
 });
