@@ -39,6 +39,6 @@ test ('countDone counts completed tasks', () => {
   addTask('Task 2');
   addTask('Task 3');
   toggleTask(1);
-  toggleTask(3);
+  toggleTask(2);
   expect(countDone()).toBe(2);
 });
