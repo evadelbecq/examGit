@@ -22,6 +22,12 @@ test('addTask increments task IDs', () => {
   ]);
 });
 
+test('toggleTask() toggles a task', () => {
+  addTask('Test task');
+  toggleTask(1);
+  expect(getTasks()).toEqual([{ id: 1, name: 'Test task', done: true }]);
+});
+
 test('reset clears the task list', () => {
   addTask('Task to be cleared');
   reset();
