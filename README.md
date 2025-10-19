@@ -1,29 +1,28 @@
+# Examen Git
 Evan “Eva” Delbecq
-Mathias "Camille" Cornano
+Mathias “Camille” Cornano
 
-## Description
+## Description:
 
-Application simple de gestion de tâches. Chaque tâche possède un identifiant unique auto-généré, une description et un statut de complétion.
+Petit programme de gestion de taches, identifiées par un Id auto-incrémenté, un descriptif, et un état de complétion.
 
-### Fonctionnalités
+**`addTask()`:** Crée une tache (task) et l’ajoute à la liste (tasks).
 
-**`addTask()`** : Crée une nouvelle tâche et l'ajoute à la liste des tâches.
+**`toggleTask()`:** Cible une tache dans la liste et change son état de complétion de `false` à `true`.
 
-**`toggleTask()`** : Modifie l'état de complétion d'une tâche spécifique (de `false` à `true`).
+**`countDone():`** Compte les taches accomplies dans la liste.
 
-**`countDone()`** : Retourne le nombre de tâches accomplies.
+**`reset()`:** Vide la liste et remet l’indentateur des taches à 0
 
-**`reset()`** : Vide la liste des tâches et remet le compteur d'identifiants à zéro.
-
-**`getTasks()`** : Retourne la liste complète des tâches.
+**`getTasks()`:** Permet de récupérer la liste des taches.
 
 ![CI](https://github.com/evadelbecq/examGit/actions/workflows/ci.yml/badge.svg)
 
-## Commandes Git
+## Commandes git :
 
-- **`git switch`** : Change de branche / **`git checkout`** : Crée une nouvelle branche à partir de la branche courante
-- **`git pull`** : Récupère et applique directement les modifications distantes (équivalent à fetch + merge) / **`git fetch`** : Récupère les modifications sans les appliquer, permettant de les examiner avant intégration
-- **`git rebase`** : Réécrit l'historique en déplaçant une série de commits vers un nouveau point de base, créant un historique linéaire mais à utiliser avec précaution / **`git revert`** : Annule un commit en créant un nouveau commit inverse, préservant l'historique
-- **`git tag`** : Marque des points importants du projet (versions, releases)
-- **`git stash`** : Sauvegarde temporairement les modifications en cours sans les commiter, permettant de les récupérer ultérieurement
-- **Release** : Version officielle du projet, généralement associée à un tag, marquant une étape stable du développement
+- `git switch` change de branche/ `git checkout` en crée une nouvelle à partir de la branche actuelle.
+- `git pull` récupère les modifications sur le repo et les ajoute directement à l’espace de travail (comme un merge) / `git fetch` permet de les récupérer, et de décider quoi faire ensuite, généralement pour les comparer.
+- `git rebase` change l’historique des corrections en déplaçant une branche qui n’a pas été commit vers un autre point de départ, c’est plus esthétique qu’autre chose, c’est pour garder un argre de projet propre mais c’est à utiliser avec précaution, cela crée souvent des conflits et/ou pertes de données lorsqu’on joue avec/ `git revert` permet d’annuler un commit en le remplaçant par un autre, gardant l’historique des corrections tel quel.
+- `git tag` permet de nommer les moments importants du projet, notamment les versions stables.
+- `git stash` c’est un commit qui commit pas, ça met les changements de coté sans les appliquer tout de suite, et on peut les récupérer plus tard
+- **Une release** c’est une version officielle du projet, souvent associée à un tag, elle permet de clairement rythmer le développement, en disant que la branche main ou master est en ligne.
